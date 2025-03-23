@@ -7,6 +7,7 @@ import bcrypt from "bcryptjs"
 const signup = async (req: Request<params,res,signup,query>,res:Response) => {
     console.log(req.body)
     const {name,email,password} = req.body
+    console.log(req.body)
     try {
         if(!name){throw new Error("name not found")}
         if(!email){throw new Error("email not found")}
