@@ -33,7 +33,7 @@ import authUser from "./auth/authUser"
 import movieRoute from "./routes/movie.routes"
 
 app.use("/users", userRoutes)
-app.use(authUser)
+// app.use(authUser)
 app.use("/movie", movieRoute)
 
 app.listen(4000,() => {

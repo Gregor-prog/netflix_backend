@@ -20,12 +20,17 @@ const login = async (req: Request<{}, {}, login, {}>,res : Response) => {
 
         req.session.user = user
 
-        res.send({message:"login successful"})
-        res.redirect("/user/home")
+        res.status(200).json({message:"login successful"})
 
     } catch (error) {
             console.log(error)
-            res.send({message: error})
+            res.status(500).json({
+                success:false,
+                message:"couldn't login",
+                data:{
+                     error
+                }
+            })
     }
 }
 
