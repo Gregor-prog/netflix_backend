@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { login, signup } from "../../types";
+import { login, signup, user } from "../../types";
 import userModel from "../../models/user.model";
 import bcrypt from "bcryptjs"
 
@@ -18,7 +18,7 @@ const login = async (req: Request<{}, {}, login, {}>,res : Response) => {
             throw new Error("invalid password");
         }
 
-        req.session.user = user
+        req.session.user = user as user
 
         res.status(200).json({message:"login successful"})
 
